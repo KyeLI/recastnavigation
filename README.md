@@ -23,7 +23,7 @@ and then casting a navigation mesh over it. The process consists of three steps,
 building the voxel mold, partitioning the mold into simple regions, peeling off 
 the regions as simple polygons.
 
-1. The voxel mold is build from the input triangle mesh by rasterizing the triangles into a multi-layer heightfield. Some simple filters are  then applied to the mold to prune out locations where the character would not be able to move.
+1. The voxel mold is built from the input triangle mesh by rasterizing the triangles into a multi-layer heightfield. Some simple filters are  then applied to the mold to prune out locations where the character would not be able to move.
 2. The walkable areas described by the mold are divided into simple overlayed 2D regions. The resulting regions have only one non-overlapping contour, which simplifies the final step of the process tremendously.
 3. The navigation polygons are peeled off from the regions by first tracing the boundaries and then simplifying them. The resulting polygons are finally converted to convex polygons which makes them perfect for pathfinding and spatial reasoning about the level. 
 
@@ -48,7 +48,7 @@ RecastDemo uses [premake5](http://premake.github.io/) to build platform specific
 - Install SDL2 and its dependencies according to your distro's guidelines.
 - run `premake5 gmake` from the `RecastDemo` folder.
 - `cd Build/gmake` then `make`
-- Run `RecastDemo\Bin\RecastDemo`
+- `cd RecastDemo/Bin` and then run `./RecastDemo`
 
 #### OSX
 
@@ -62,7 +62,7 @@ RecastDemo uses [premake5](http://premake.github.io/) to build platform specific
 #### Windows
 
 - Grab the latest SDL2 development library release from [here](https://www.libsdl.org/download-2.0.php) and unzip it `RecastDemo\Contrib`.  Rename the SDL folder such that the path `RecastDemo\Contrib\SDL\lib\x86` is valid.
-- Run `"premake5" vs2015` from the `RecastDemo` folder
+- Run `"premake5" vs2019` from the `RecastDemo` folder
 - Open the solution, build, and run.
 
 ### Running Unit tests
